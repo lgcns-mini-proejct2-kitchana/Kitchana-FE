@@ -39,7 +39,7 @@ pipeline {
                 ]]) {
                     sh '''
                         echo "Uploading to S3..."
-                        $AWS_CLI s3 sync build/ s3://$S3_BUCKET --delete
+                        $AWS_CLI s3 sync dist/ s3://$S3_BUCKET --delete
 
                         echo "Invalidating CloudFront cache..."
                         $AWS_CLI cloudfront create-invalidation \
