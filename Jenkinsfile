@@ -15,7 +15,16 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/InspireCampTeam3/Kitcha-FE.git'
             }
         }
-
+        
+        stage('Install AWS CLI') {
+            steps {
+                sh '''
+                    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+                    unzip awscliv2.zip
+                    ./aws/install || echo "already installed"
+                '''
+            }
+        }
         stage('Install dependencies') {
             steps {
                 sh 'npm ci'
