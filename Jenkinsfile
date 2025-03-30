@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    tools {
+        nodejs 'nodejs' 
+    }
     environment {
         AWS_DEFAULT_REGION = 'ap-southeast-2'  // 너가 쓰는 리전
         S3_BUCKET = 'kitchana-fe-bucket'      // 실제 버킷 이름으로 교체
