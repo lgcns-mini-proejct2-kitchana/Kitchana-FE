@@ -19,7 +19,7 @@ const BoardDetailPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
 
-  // alert
+  // alert 알람창
   const closeModal = () => setIsModalOpen(false);
   const openModal = (message) => {
     setModalMessage(message);
