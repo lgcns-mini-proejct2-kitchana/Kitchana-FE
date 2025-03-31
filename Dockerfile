@@ -6,7 +6,7 @@ ARG VITE_API_BASE_URL
 COPY package*.json ./
 RUN echo "VITE_API_BASE_URL=${VITE_API_BASE_URL}" > .env
 RUN npm install
-
+ 
 COPY . .
 RUN npm run build
 # Stage 2: Run - nginx serving
