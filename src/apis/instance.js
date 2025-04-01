@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: '/api'
+  baseURL: '/'
 });
 
 // 요청 인터셉터 (JWT 토큰 자동 포함)
