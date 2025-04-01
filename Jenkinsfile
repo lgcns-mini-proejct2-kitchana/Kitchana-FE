@@ -9,6 +9,7 @@ pipeline {
         AWS_DEFAULT_REGION = 'ap-southeast-2'       // AWS 리전
         S3_BUCKET = 'kitchana-fe-bucket'            // S3 버킷 이름
         CLOUDFRONT_ID = 'E396PRZDBR70A6'            // CloudFront 배포 ID
+        AWS_CLI = '/usr/local/bin/aws'              // AWS CLI 직접 경로 지정
     }
 
     stages {
@@ -38,10 +39,10 @@ pipeline {
                 ]]) {
                     sh '''
                         echo "Uploading to S3..."
-                        aws s3 sync dist/ s3://$S3_BUCKET --delete
+                        $AWS_CLI s3 sync dist/ s3://$S3_BUCKET --delete
 
                         echo "Invalidating CloudFront cache..."
-                        aws cloudfront create-invalidation \
+                        $AWS_CLI cloudfront create-invalidation \
                           --distribution-id $CLOUDFRONT_ID \
                           --paths "/*"
                     '''
