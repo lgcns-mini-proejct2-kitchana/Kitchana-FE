@@ -1,6 +1,5 @@
 # Kitchana-FE
-유저의 관심사 기반 맞춤형 뉴스 제공https://github.com/lgcns-mini-proejct2-kitchana/Kitchana-FE/blob/main/README.md
-
+유저의 관심사 기반 맞춤형 뉴스 제공
 
 ## 🖥️ 프로젝트 소개 및 배경
 기사(Ki) + 가챠(tcha)
