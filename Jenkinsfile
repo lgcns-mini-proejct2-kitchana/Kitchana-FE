@@ -29,7 +29,7 @@ pipeline {
             steps {
                 sh '''
                   rm -rf dist
-            
+        
                   npm run build
                 '''
             }
