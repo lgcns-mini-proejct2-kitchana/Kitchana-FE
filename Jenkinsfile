@@ -27,8 +27,10 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo "VITE_API_BASE_URL=https://api.kitchana.shop" > .env.production
-                sh 'npm run build'
+                sh """#!/bin/bash
+                    echo "VITE_API_BASE_URL=https://api.kitchana.shop" > .env.production
+                    npm run build
+                """
             }
         }
 
