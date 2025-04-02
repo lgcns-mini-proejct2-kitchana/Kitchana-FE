@@ -32,5 +32,7 @@ S3 + cloudFront <br/>
 Jenkins 파이프라인
 
 <br>
-![read](https://github.com/user-attachments/assets/65cb8e66-8380-44ea-8b39-dccae1adcf94)
+
+
+![아키텍쳐](https://github.com/user-attachments/assets/ef73a36b-9855-498c-bf7e-cda52ca11d16)
 
