@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import instance from '@/apis/instance';
 import Keyword from '@/components/mypick/Keyword';
 import keywords from '@/constants/mypick/keywords';
+import axios from 'axios';
 
 const MyPickPage = () => {
   const [selectedKeyword, setSelectedKeyword] = useState(null);
@@ -13,9 +14,22 @@ const MyPickPage = () => {
   const handlePickBtnClick = async () => {
     console.log(selectedKeyword);
     try {
-      const response = await instance.post('/authentication/users/interest', {
-        interest: selectedKeyword,
-      });
+      const token = sessionStorage.getItem('jwtToken');
+      
+      const response = await axios.post(
+        '/api/authentication/users/interest',
+        { interest: selectedKeyword },
+        {
+          headers: {
+            Authorization: token ?? '',
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+      
+      // const response = await instance.post('/authentication/users/interest', {
+      //   interest: selectedKeyword,
+      // });
 
       sessionStorage.setItem('keyword', selectedKeyword);
       console.log('관심사 설정 성공:', response.data.message);
