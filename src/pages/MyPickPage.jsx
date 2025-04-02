@@ -13,7 +13,9 @@ const MyPickPage = () => {
   const handlePickBtnClick = async () => {
     console.log(selectedKeyword);
     try {
-      const response = await instance.post('/authentication/users/interest', {
+      const url = '/authentication/users/interest';
+      cosole.log(url);
+      const response = await instance.post(url, {
         interest: selectedKeyword,
       });
 
