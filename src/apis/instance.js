@@ -14,8 +14,6 @@ instance.interceptors.request.use(
       config.headers.Authorization = `${token}`;
     }
 
-    console.log('[요청 보내는 URL]:', config.baseURL + config.url);
-
     return config;
   },
   (error) => {
