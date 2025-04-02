@@ -33,3 +33,4 @@ Jenkins 파이프라인
 
 <br>
 
+![d](https://github.com/user-attachments/assets/16719d15-9713-4a33-b25c-cbefab3be431)
